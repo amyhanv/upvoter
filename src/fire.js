@@ -2,12 +2,13 @@ import Firebase from "firebase";
 
 var config = {
   apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
-  authDomain: "myduckdiet.firebaseapp.com",
-  databaseURL: "https://myduckdiet.firebaseio.com",
-  projectId: "myduckdiet",
-  storageBucket: "myduckdiet.appspot.com",
-  messagingSenderId: "7148421548"
+  authDomain: "ethix-score.firebaseapp.com",
+  databaseURL: "https://ethix-score.firebaseio.com",
+  projectId: "ethix-score",
+  storageBucket: "",
+  messagingSenderId: "149775076544"
 };
+firebase.initializeApp(config);
 
 // Create a Firebase instance
 let app = Firebase.initializeApp(config);
@@ -16,21 +17,7 @@ let app = Firebase.initializeApp(config);
 let db = app.database();
 
 // Retrieve a reference to nodes of each input field/questions
-let booksRef = db.ref("books");
-let foodRef = db.ref("food");
-let foodAmountRef = db.ref("food-amount");
-let foodKindRef = db.ref("food-kind");
-let numDucksRef = db.ref("num-duck");
-let timeFedRef = db.ref("time-fed");
-let whereFedRef = db.ref("where");
+let upRef = db.ref("up");
+let downRef = db.ref("down");
 
-export {
-  db,
-  booksRef,
-  foodRef,
-  foodAmountRef,
-  foodKindRef,
-  numDucksRef,
-  timeFedRef,
-  whereFedRef
-};
+export { db, upRef, downRef };
