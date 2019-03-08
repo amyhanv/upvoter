@@ -2,17 +2,72 @@
   <div id="log" class="container">
     <header id="app-header" class="text-center">
       <h1>
-        <strong>Score Logger</strong>
+        <strong>Who wants to be a social credit supreme emperor? CANADA</strong>
       </h1>
     </header>
+    <b-container>
+      <b-row>
+        <b-col cols="2">
+          <b-form class="add-log">
+            <div class="form-question">
+              <h4 class="name">Amy</h4>
+              <button v-on:click.prevent="upScore('amy')">↑</button>
+              <button v-on:click.prevent="downScore('amy')">↓</button>
+            </div>
+          </b-form>
+        </b-col>
 
-    <b-form id="add-log">
-      <div class="form-question">
-        <h4 for="food">UPDOOT ME</h4>
-        <button v-on:click.prevent="upScore">up</button>
-        <button v-on:click.prevent="downScore">down</button>
-      </div>
-    </b-form>
+        <b-col cols="2">
+          <b-form class="add-log">
+            <div class="form-question">
+              <h4 class="name">Casey</h4>
+              <button v-on:click.prevent="upScore('casey')">↑</button>
+              <button v-on:click.prevent="downScore('casey')">↓</button>
+            </div>
+          </b-form>
+        </b-col>
+
+        <b-col cols="2">
+          <b-form class="add-log">
+            <div class="form-question">
+              <h4 class="name">Kait</h4>
+              <button v-on:click.prevent="upScore('kait')">↑</button>
+              <button v-on:click.prevent="downScore('kait')">↓</button>
+            </div>
+          </b-form>
+        </b-col>
+
+        <b-col cols="2">
+          <b-form class="add-log">
+            <div class="form-question">
+              <h4 class="name">Josh</h4>
+              <button v-on:click.prevent="upScore('josh')">↑</button>
+              <button v-on:click.prevent="downScore('josh')">↓</button>
+            </div>
+          </b-form>
+        </b-col>
+
+        <b-col cols="2">
+          <b-form class="add-log">
+            <div class="form-question">
+              <h4 class="name">Court</h4>
+              <button v-on:click.prevent="upScore('court')">↑</button>
+              <button v-on:click.prevent="downScore('court')">↓</button>
+            </div>
+          </b-form>
+        </b-col>
+
+        <b-col cols="2">
+          <b-form class="add-log">
+            <div class="form-question">
+              <h4 class="name">Leoza</h4>
+              <button v-on:click.prevent="upScore('leoza')">↑</button>
+              <button v-on:click.prevent="downScore('leoza')">↓</button>
+            </div>
+          </b-form>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -25,17 +80,52 @@ export default {
   data() {
     return {
       // Variables from form
-      // newFood: "",
+      // newVal: "",
     };
   },
+  // IM SORRY
   methods: {
-    upScore: function() {
-      console.log("up pressed");
-      fb.upRef.push(1);
+    upScore: function(name) {
+      if (name == "amy") {
+        fb.amyRef.push(1);
+      }
+      if (name == "kait") {
+        fb.kaitRef.push(1);
+      }
+      if (name == "leoza") {
+        console.log(name);
+        fb.leozaRef.push(1);
+      }
+      if (name == "josh") {
+        fb.joshRef.push(1);
+      }
+      if (name == "casey") {
+        fb.caseyRef.push(1);
+      }
+      if (name == "court") {
+        fb.courtRef.push(1);
+      }
     },
-    downScore: function() {
-      console.log("down pressed");
-      fb.downRef.push(1);
+    downScore: function(name) {
+      if (name == "amy") {
+        fb.amyRef.push(-1);
+      }
+      if (name == "kait") {
+        fb.kaitRef.push(-1);
+      }
+      if (name == "leoza") {
+        console.log(name);
+        fb.leozaRef.push(-1);
+      }
+      if (name == "josh") {
+        fb.joshRef.push(-1);
+      }
+      if (name == "casey") {
+        fb.caseyRef.push(-1);
+      }
+      if (name == "court") {
+        fb.courtRef.push(-1);
+      }
     }
   }
 };
@@ -75,30 +165,15 @@ h6 {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
 
-#logo {
-  margin: 0 auto;
-  width: 150px;
-  padding: 0;
-  display: block;
-}
-#add-log {
+.add-log {
   margin-top: 50px;
-}
-.range-style {
-  width: 300px !important;
-  padding-top: 3em;
 }
 
 .form-question {
   margin: 30px 0;
-  padding: 50px;
+  padding: 40px;
   border-radius: 5px;
   box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.03);
-}
-
-#radio-form {
-  text-align: left;
-  margin: 0 auto;
 }
 
 .input-form,
@@ -114,23 +189,10 @@ h6 {
   width: 300px;
 }
 
-#form-buttons {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-#submit-log {
+button {
+  border: none;
   background-color: white;
-  color: #007bfe;
-  border: 1px solid #007bfe;
-}
-#reset-log {
-  border: 1px solid #9fb8ca;
-  background-color: transparent;
-  color: #9fb8ca;
-}
-.button-size {
-  width: 100%;
-  padding: 15px 20px !important;
-  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
 }
 </style>

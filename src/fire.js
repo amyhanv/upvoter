@@ -17,7 +17,12 @@ let app = Firebase.initializeApp(config);
 let db = app.database();
 
 // Retrieve a reference to nodes of each input field/questions
-let upRef = db.ref("up");
-let downRef = db.ref("down");
 
-export { db, upRef, downRef };
+let amyRef = db.ref("amy-score");
+let caseyRef = db.ref("casey-score");
+let kaitRef = db.ref("kait-score");
+let courtRef = db.ref("court-score");
+let leozaRef = db.ref("leoza-score");
+let joshRef = db.ref("josh-score");
+
+export { db, amyRef, caseyRef, kaitRef, courtRef, leozaRef, joshRef };
